@@ -1,0 +1,33 @@
+import turtle
+
+pen = turtle.Turtle()
+pen.speed(10000)
+pen.color("red")
+a = 20
+
+
+def squad():
+    for i in range(4):
+        pen.forward(a)
+        pen.left(90)
+
+
+def love():
+    for i in range(75):
+        squad()
+        pen.left(2)
+        global a
+        a = a + 2.5
+    for i in range(75):
+        squad()
+        pen.left(2)
+        a = a - 2.5
+
+
+pen.penup()
+pen.left(75)
+pen.sety(150)
+pen.pendown()
+love()
+
+turtle.done()
